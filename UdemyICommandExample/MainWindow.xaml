@@ -1,0 +1,20 @@
+﻿<Window x:Class="UdemyICommandExample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:UdemyICommandExample.ViewModel"
+        xmlns:local="clr-namespace:UdemyICommandExample"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    
+    <Window.Resources>
+        <vm:ViewModelBase x:Key="viewModel"/>
+    </Window.Resources>
+    <Grid>
+        <Button Content="Click me!"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center" 
+                Command="{Binding HelloCommand, Source={StaticResource viewModel}}"/>
+    </Grid>
+</Window>
